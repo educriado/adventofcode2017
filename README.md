@@ -1,2 +1,2 @@
-# adventofcode2017
-Solutions to the different challenged of Advent of Code 2017
+# Advent of Code - 2017
+Solutions to the different challenges of Advent of Code 2017.
