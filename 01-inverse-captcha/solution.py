@@ -1,16 +1,13 @@
 """Eduardo Criado - Code for first challenge of Advent of Code 2017."""
 
 def inverse_captcha(num_list):
-    """Return the inverse captcha value depending on the received number."""
+    """Return the inverse captcha value depending on the received digits."""
     i = 0
     result = 0
-    while i < (len(num_list) - 1):
-        if num_list[i] == num_list[i + 1]:
+    while i < len(num_list):
+        if num_list[i] == num_list[(i + (len(num_list) / 2)) % len(num_list)]:
             result += num_list[i]
         i += 1
-    #Check the last element
-    if num_list[0] == num_list[i]:
-        result += num_list[i]
     return result
 
 def main():
