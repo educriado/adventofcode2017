@@ -1,19 +1,23 @@
 """Eduardo Criado - Second challenge of Advent of Code. Calculating the checksum of a spreadsheet.
 """
 
+def evenly_divide(x, y):
+    """Returns true if y evenly divides x."""
+    return x % y == 0
+
 def calculate_checksum(spreadsheet):
     """Calculates the checksum of a spreadsheet, which is the sum of every row's difference of its
     highest and lowest value."""
     checksum = 0
     for row in spreadsheet:
-        highest = row[0]
-        lowest = row[0]
         for number in row:
-            if number > highest:
-                highest = number
-            if number < lowest:
-                lowest = number
-        checksum += highest - lowest
+            i = 0
+            found = False
+            while i < len(row) and not found:
+                if row[i] != number and (row[i] % number == 0):
+                    found = True
+                    checksum += row[i] / number
+                i += 1
     return checksum
 
 def main():
